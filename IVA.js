@@ -7,12 +7,13 @@ Si se invoca la función sin pasarle
 el porcentaje de IVA, deberá aplicar un 21%.*/
 
 // 0.00 <= iva <= 0.99
-let total = (subtotal:number, iva = 0.21):number => { return subtotal * (iva + 1); }
+var total2 = function (subtotal, iva) {
+    if (iva === void 0) { iva = 0.21; }
+    return subtotal * (iva + 1);
+};
 
-console.log(total(100));
-console.log(total(100, 0.22));
-console.log(total(100, 0.18));
-console.log(total(150));
-console.log(total(150, 0.17));
-
-
+console.log(total2(100));
+console.log(total2(100, 0.22));
+console.log(total2(100, 0.18));
+console.log(total2(150));
+console.log(total2(150, 0.17));
